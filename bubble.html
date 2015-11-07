@@ -1,0 +1,37 @@
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+</head>
+
+<div id="tester" style="width:600px;height:250px;"></div>
+
+<script>
+    divid = document.getElementById('tester');
+    var r = _.range(5),
+        x = r.map(function(i) {
+            return i ;
+        }),
+        x = ['Bafu', 'Sherry', 'Khfeng', 'Gerald', 'Tammy']
+        y = r.map(function(i) {
+            return 1;
+        }),
+        s = r.map(function(i) {
+            return (i + 1)*5;
+        }),
+        c = r.map(function(i) {
+            return 'hsl(' + (i * 18) + ',100,40)';
+        }),
+        data = [{
+            x: x,
+            y: y,
+            mode: 'markers',
+            marker: {
+                size: s,
+                color: c
+            }
+        }];
+
+    Plotly.plot(divid, data);
+</script>
